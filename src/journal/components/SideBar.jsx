@@ -13,9 +13,12 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const SideBar = ({ drawerWidth }) => {
   const months = ["January", "February", "March", "April"];
+  const { displayName } = useSelector((state) => state.auth);
+
   return (
     <Box
       component="nav"
@@ -31,7 +34,7 @@ const SideBar = ({ drawerWidth }) => {
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Jeremias Muriette
+           { displayName ? displayName : 'Not User Name' }
           </Typography>
         </Toolbar>
         <Divider />

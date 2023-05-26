@@ -51,5 +51,4 @@ export const useForm = (initialForm = {}, formValidations = {}) => {
     ...formValidators,
     isFormValid
   };
-  ß;
 };

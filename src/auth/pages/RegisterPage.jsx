@@ -13,17 +13,17 @@ import { useForm } from "../../hooks/useForm";
 import { useDispatch, useSelector } from "react-redux";
 import { startCreatingWithEmail } from "../../store/auth/thunks";
 
+const formData = {
+  email: "",
+  password: "",
+  displayName: "",
+};
+
 const RegisterPage = () => {
   const dispatch = useDispatch();
   const [formSubmitted, setFormSubmitted] = useState(false);
   const { status, errorMessage } = useSelector((state) => state.auth);
   const isCheckAuth = useMemo(() => status === "checking", [status]);
-
-  const formData = {
-    email: "",
-    password: "",
-    displayName: "",
-  };
 
   const formValidation = {
     email: [(value) => value.includes("@"), "Email should contain @"],

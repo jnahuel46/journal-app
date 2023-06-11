@@ -10,14 +10,14 @@ import {
   startLoginWithEmail,
 } from "../../store/auth/thunks";
 
+const formData = {
+  email: "",
+  password: "",
+};
+
 const LoginPage = () => {
   const dispatch = useDispatch();
-  const { status, errorMessage } = useSelector((state) => state.auth);
-
-  const formData = {
-    email: "",
-    password: "",
-  };
+  const { status, errorMessage } = useSelector((state) => state.auth);4
 
   const { email, password, onInputChange } = useForm(formData);
   // the useMemo shoul evaluate the result of status === checking and

@@ -77,6 +77,7 @@ const LoginPage = () => {
             <Grid item xs={12} sm={6}>
               <Button
                 disabled={isAuth}
+                aria-label="google-btn"
                 onClick={onSubmitGoogle}
                 variant="contained"
                 fullWidth
